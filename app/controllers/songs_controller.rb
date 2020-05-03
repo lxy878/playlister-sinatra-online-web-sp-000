@@ -17,7 +17,7 @@ class SongsController < ApplicationController
   end
 
   post '/songs' do
-    new_song = Song.create(params[:song])
+    new_song = Song.find_or_create_by(params[:song])
     if !params[:artist].empty?
       new_artist = Artist.create(params[:artist])
       new_song.artist_id = new_artist.id
