@@ -21,7 +21,7 @@ class SongsController < ApplicationController
     if !params[:artist].empty?
       new_artist = Artist.create(params[:artist])
       new_song.artist_id = new_artist.id
-      save
+      new_song.save
     end
     # flash[:message] = "Successfully created song."
     redirect "/songs/#{new_song.slug}"
