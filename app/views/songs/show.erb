@@ -9,6 +9,9 @@
   <% end %>
 </ul>
 
+<% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %>
 
 <a href="/">Home</a>
 <a href="/songs">Song List</a>
