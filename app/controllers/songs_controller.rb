@@ -1,4 +1,9 @@
+# require 'rake-flash'
+# require 'sinatra/base'
+
 class SongsController < ApplicationController
+  enable :sessions
+  use Rack::Flash
 
   get '/songs' do
     @songs = Song.all
@@ -17,7 +22,7 @@ class SongsController < ApplicationController
       new_artist = Artist.create(params[:artist])
       new_song.artist_id = new_artist.id
     end
-    flash[:message] = "Successfully created song."
+    # flash[:message] = "Successfully created song."
     redirect "/songs/#{new_song.slug}"
   end
 
