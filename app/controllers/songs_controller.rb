@@ -24,7 +24,7 @@ class SongsController < ApplicationController
       new_song.save
     end
     # binding.pry
-    # flash[:message] = "Successfully created song."
+    flash[:message] = "Successfully created song."
     redirect "/songs/#{new_song.slug}"
   end
 
