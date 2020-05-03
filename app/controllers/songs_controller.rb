@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require 'rake-flash'
+require 'rack-flash'
 
 class SongsController < ApplicationController
   enable :sessions
